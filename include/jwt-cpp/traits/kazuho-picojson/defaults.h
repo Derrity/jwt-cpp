@@ -33,8 +33,7 @@ namespace jwt {
 	 * \throw std::invalid_argument Token is not in correct format
 	 * \throw std::runtime_error Base64 decoding failed or invalid json
 	 */
-	inline decoded_jwt<traits::kazuho_picojson> decode(
-            std::basic_string<char, std::char_traits<char>, std::allocator<char>> token) {
+	inline decoded_jwt<traits::kazuho_picojson> decode(const std::string& token) {
 		return decoded_jwt<traits::kazuho_picojson>(token);
 	}
 #endif
