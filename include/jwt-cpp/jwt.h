@@ -3263,15 +3263,10 @@ namespace jwt {
 		 * \param jwt Token to check
 		 * \throw token_verification_exception Verification failed
 		 */
-         bool verify(const decoded_jwt<json_traits>& jwt) const {
-            try {
+         void verify(const decoded_jwt<json_traits>& jwt) const {
                 std::error_code ec;
                 verify(jwt, ec);
                 error::throw_if_error(ec);
-                return true;
-            }catch(const std::exception& e){
-                return false;
-            }
 		}
 		/**
 		 * Verify the given token.
